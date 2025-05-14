@@ -1,4 +1,4 @@
-import {Gauge, type LucideIcon, MessagesSquare, SquareChartGantt} from "lucide-react";
+import {Gauge, type LucideIcon, MessagesSquare, LineChart, Gamepad, Dice2, BookIcon, Lightbulb} from "lucide-react";
 
 export type SiteConfig = typeof siteConfig;
 export type Navigation = {
@@ -19,12 +19,32 @@ export const navigations: Navigation[] = [
         href: "/",
     },
     {
-        icon: MessagesSquare,
-        name: "Ticket",
-        href: "/ticket",
+        icon: Dice2,
+        name: "Jeux de société",
+        href: "/boardgames",
+    },
+    // {
+    //     icon: Gamepad,
+    //     name: "Jeux vidéos",
+    //     href: "/videogames",
+    // },
+    // {
+    //     icon: BookIcon,
+    //     name: "Livres",
+    //     href: "/books",
+    // },
+    {
+        icon: Lightbulb,
+        name: "Protos",
+        href: "/prototypes",
     },
     {
-        icon: SquareChartGantt,
+        icon: MessagesSquare,
+        name: "Contact",
+        href: "/contact",
+    },
+    {
+        icon: LineChart,
         name: "Stats",
         href: "/stats",
     },

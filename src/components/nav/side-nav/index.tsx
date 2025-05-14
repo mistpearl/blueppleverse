@@ -4,8 +4,8 @@ import {ArrowLeftToLine, ArrowRightToLine} from "lucide-react";
 import {useState} from "react";
 import {cn} from "@/lib/utils";
 import Navigation from "./components/navigation";
-import User from "./components/user";
 import Logo from "./components/logo";
+import Footer from "./components/footer";
 
 export default function SideNav() {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +33,9 @@ export default function SideNav() {
                     isOpen ? "translate-x-0" : "-translate-x-full",
                 )}
             >
-                <User/>
-                <Navigation/>
                 <Logo/>
+                <Navigation/>
+                <Footer/>
             </aside>
         </>
     );
