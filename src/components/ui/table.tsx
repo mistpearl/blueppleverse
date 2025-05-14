@@ -97,7 +97,6 @@ export default function Table(props) {
                     </thead>
                     <tbody>
                     {data.map(row => {
-                        console.log(row);
                         return (
                             <tr key={row.id}>
                                 <td className="p-4 border-b border-blue-gray-50">

@@ -22,7 +22,7 @@ export async function fetchBoardGamesWithAllData() {
         .select(`boardgame_id(id), mecanic_id(id, name, background_color, font_color)`);
 
     const data = boardgames.map((boardgame) => {
-        let arrayOfMecanics = [];
+        const arrayOfMecanics = [];
         mecanics.forEach((mecanic) => {
             if (mecanic.boardgame_id.id == boardgame.id) {
                 arrayOfMecanics.push(mecanic);
