@@ -1,4 +1,4 @@
-export default function ContactForm(props) {
+export default function ContactForm() {
     return (
         <div className="m-12 relative flex flex-col rounded-xl bg-transparent">
             <h4 className="block text-xl font-medium text-slate-800">
