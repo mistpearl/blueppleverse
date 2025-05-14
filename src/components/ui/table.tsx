@@ -1,5 +1,6 @@
+import {PropsWithChildren} from "react";
 
-export default function Table(props) {
+export default function Table(props: PropsWithChildren) {
     const headers = props.headers;
     const data = props.data;
 
