@@ -1,11 +1,11 @@
-import type { SVGProps } from "react";
+import type {SVGProps} from "react";
 
 export type IconSvgProps = SVGProps<SVGSVGElement> & {
-  size?: number;
+    size?: number;
 };
 
 export type TicketMetric = {
-  date: string;
-  type: "created" | "resolved";
-  count: number;
+    date: string;
+    type: "created" | "resolved";
+    count: number;
 };

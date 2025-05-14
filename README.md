@@ -1,6 +1,6 @@
-# VisActor Next.js Dashboard Template
+# Logo Next.js Dashboard Template
 
-A modern dashboard template built with [VisActor](https://visactor.io/) and Next.js, featuring a beautiful UI and rich data visualization components.
+A modern dashboard template built with [Logo](https://visactor.io/) and Next.js, featuring a beautiful UI and rich data visualization components.
 
 [Live Demo](https://visactor-next-template.vercel.app/)
 
@@ -8,7 +8,7 @@ A modern dashboard template built with [VisActor](https://visactor.io/) and Next
 
 ## Features
 
-- 📊 **Rich Visualizations** - Powered by VisActor, including bar charts, gauge charts, circle packing charts, and more
+- 📊 **Rich Visualizations** - Powered by Logo, including bar charts, gauge charts, circle packing charts, and more
 - 🌗 **Dark Mode** - Seamless dark/light mode switching with system preference support
 - 📱 **Responsive Design** - Fully responsive layout that works on all devices
 - 🎨 **Beautiful UI** - Modern and clean interface built with Tailwind CSS
@@ -19,7 +19,7 @@ A modern dashboard template built with [VisActor](https://visactor.io/) and Next
 ## Tech Stack
 
 - [Next.js](https://nextjs.org/) - React framework
-- [VisActor](https://visactor.io/) - Visualization library
+- [Logo](https://visactor.io/) - Visualization library
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Shadcn](https://ui.shadcn.com/) - UI components
 - [Jotai](https://jotai.org/) - State management
@@ -88,6 +88,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
-- [VisActor](https://visactor.io/) - For the amazing visualization library
+- [Logo](https://visactor.io/) - For the amazing visualization library
 - [Vercel](https://vercel.com) - For the incredible deployment platform
 - [Next.js](https://nextjs.org/) - For the awesome React framework
