@@ -27,8 +27,8 @@ export default function Navigation() {
                             className="mr-2 text-slate-800 dark:text-slate-200"
                         />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
-              {navigation.name}
-            </span>
+                            {navigation.name}
+                        </span>
                     </Link>
                 );
             })}

@@ -1,22 +1,17 @@
-export const metrics = [
-  {
-    title: "Created Tickets",
-    value: "24,208",
-    change: -0.05,
-  },
-  {
-    title: "Unsolved Tickets",
-    value: "4,564",
-    change: 0.02,
-  },
-  {
-    title: "Resolved Tickets",
-    value: "18,208",
-    change: 0.08,
-  },
-  {
-    title: "Average First Time Reply",
-    value: "12:01 min",
-    change: 0.08,
-  },
-];
+'use server';
+
+import {createClient} from '@/utils/supabase/server';
+
+export async function fetchMetrics() {
+    const supabase = await createClient();
+
+    const metrics = [];
+
+    const { count, error } = await supabase.from('boardgames').select('*', { count: 'exact', head: true });
+    metrics.push({title: 'Jeux de société', value: count,  change: 0});
+
+    
+    
+    console.log(metrics);
+    return metrics;
+}

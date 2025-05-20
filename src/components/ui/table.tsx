@@ -1,34 +1,22 @@
+'use client';
+
 import {PropsWithChildren} from "react";
+import {Heart, Pencil} from "lucide-react";
+import addToFavorites from "@/data/favorites";
+import removeFromFavorites from "@/data/favorites";
 
 export default function Table(props: PropsWithChildren) {
     const headers = props.headers;
     const data = props.data;
+    const IconHeart = Heart;
+    const IconPencil = Pencil;
+
+    console.log(data);
 
     return (
         <div
             className="relative m-2 flex flex-col w-full h-full text-gray-700 bg-white shadow-md rounded-xl bg-clip-border">
             <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white rounded-none bg-clip-border">
-                <div className="flex items-center justify-between gap-8 mb-8">
-                    <div className="flex flex-col gap-2 shrink-0 sm:flex-row">
-                        <button
-                            className="select-none rounded-lg border border-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                            type="button">
-                            view all
-                        </button>
-                        <button
-                            className="flex select-none items-center gap-3 rounded-lg bg-gray-900 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                            type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                 aria-hidden="true"
-                                 strokeWidth="2" className="w-4 h-4">
-                                <path
-                                    d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z">
-                                </path>
-                            </svg>
-                            Add item
-                        </button>
-                    </div>
-                </div>
                 <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
                     <div className="block w-full overflow-hidden md:w-max">
                         <nav>
@@ -148,19 +136,22 @@ export default function Table(props: PropsWithChildren) {
                                         {row.release}
                                     </p>
                                 </td>
-                                <td className="p-4 border-b border-blue-gray-50">
-                                    <button
-                                        className="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                                        type="button">
-                                          <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                                                 className="w-4 h-4">
-                                              <path
-                                                  d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32L19.513 8.2z">
-                                              </path>
-                                            </svg>
-                                          </span>
-                                    </button>
+                                {row.note &&
+                                    <td className="p-4 border-b border-blue-gray-50">
+                                        <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                                            {row.note}
+                                        </p>
+                                    </td>
+                                }
+                                <td key={10} className="p-4 border-b border-blue-gray-50">
+                                    {row.wishlist &&
+                                        <IconHeart color="bg-red-700" onClick={() => addToFavorites(row.id, 1)}/>
+                                    }
+                                    {!row.wishlist &&
+                                        <IconHeart color="#FF11FF" fill="#111" onClick={() => removeFromFavorites(row.id, 1)}/>
+                                    }
+
+                                    <IconPencil />
                                 </td>
                             </tr>
                         );
